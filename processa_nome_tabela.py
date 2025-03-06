@@ -7,8 +7,8 @@ caminho_pasta = "/Exemplo/Caminho/Pasta_arquivos"
 lakehouse = "Lakehouse_silver"    #Lakehouse destino
 tabela = "nome_da_tabela_a_ser_escrita_no_lakehouse"    #Nome da tabela no lakehouse
 
-# Cada tabela terá um dataframe diferente, portanto, selecione as colunas e trate os . e ,. Lembrando que o spark tem linguagem americana, então o que é "," aqui, tem que ser transformado para "."
 
+# Cada tabela terá um dataframe diferente, portanto, selecione as colunas e trate os . e ,. Lembrando que o spark tem linguagem americana, então o que é "," aqui, tem que ser transformado para "."
 
 from pyspark.sql.functions import col, to_date, regexp_replace
 from pyspark.sql.types import StringType, IntegerType, FloatType, DoubleType
@@ -28,7 +28,6 @@ def clean_spark_dataframe(df_spark):
         .withColumn("coluna_f", col("coluna_f").cast(DoubleType())) 
         .withColumn("coluna_g", col("coluna_g").cast(DoubleType()))
     ) 
-
 
 
 ## Chame o notebook com o código principal a ser utilizado.
